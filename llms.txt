@@ -1,0 +1,36 @@
+# Lexipanda
+
+> Free browser-based image compression, cropping and editing tool.
+> No uploads. No account required. Runs entirely in the browser.
+
+## What it does
+- Compress images to a target file size in KB or MB
+- Crop with interactive drag tool and aspect ratio presets (Free, 1:1, 4:3, 16:9, 3:2, 2:3)
+- Resize by exact pixel dimensions or percentage scale
+- Convert between JPEG, WebP and PNG formats
+- Adjust brightness, contrast, saturation, blur and sharpness
+- Apply filters: grayscale, sepia, invert, vintage, cool tone, warm tone
+- Rotate clockwise/counter-clockwise, flip horizontal/vertical
+- Before and after compare slider to review changes
+- Download or copy to clipboard
+- All processing happens client-side — images never leave the device
+
+## Who it's for
+Developers, designers, bloggers, marketers, social media managers,
+and anyone who needs to quickly compress, crop or edit images without
+installing software or uploading files to a server.
+
+## Privacy
+Lexipanda processes everything in the browser using the Canvas API.
+No image data is ever sent to a server. No tracking of image content.
+
+## Free tier
+5 conversions per day free. No sign up or account required.
+Resets daily at midnight.
+
+## URL
+https://www.lexipanda.com
+
+## Alternatives it replaces
+TinyPNG, Squoosh, iLovePDF image tools, Canva image resizer,
+Adobe Express image resizer, online-convert.com
