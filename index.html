@@ -313,6 +313,46 @@ nav.scrolled { border-bottom-color: var(--border); }
 .cta-h em { font-style:italic; font-weight:300; color:var(--accent); }
 .cta-sub { font-size:.95rem; color:var(--ink2); margin-bottom:36px; font-weight:300; }
 
+/* FAQ */
+.faq {
+  position: relative; z-index: 1;
+  padding: 100px 40px; max-width: 780px; margin: 0 auto;
+}
+.faq .section-label { text-align: center; }
+.faq .section-title { text-align: center; margin-bottom: 48px; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+  transition: border-color .25s, box-shadow .25s;
+}
+.faq-item:hover { border-color: rgba(45,106,79,.3); box-shadow: 0 4px 20px rgba(0,0,0,.05); }
+.faq-q {
+  width: 100%; padding: 18px 20px; display: flex;
+  align-items: center; justify-content: space-between; gap: 16px;
+  background: transparent; border: none; cursor: pointer;
+  font-family: var(--sans); font-size: .92rem; font-weight: 500;
+  color: var(--ink); text-align: left; transition: background .2s;
+}
+.faq-q:hover { background: var(--bg2); }
+.faq-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent-lt); border: 1px solid rgba(45,106,79,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .75rem; color: var(--accent); flex-shrink: 0;
+  transition: transform .3s, background .2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--accent); color: white; }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+  font-size: .85rem; color: var(--ink2); line-height: 1.75;
+  font-weight: 300; padding: 0 20px;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
+.faq-a strong { color: var(--ink); font-weight: 500; }
+.faq-a a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+
 /* Footer */
 footer {
   position: relative; z-index: 1;
@@ -762,6 +802,95 @@ input[type=range]:hover::-webkit-slider-thumb { box-shadow:0 0 0 5px rgba(45,106
       Open Studio — it's free
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions,<br><em>honest answers</em></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I compress an image to under 200KB for free?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Drop your image into Lexipanda, then under <strong>Compression</strong> in the controls panel, type <strong>200</strong> in the Target Size field and select <strong>KB</strong>. Click <em>Compress to Target</em> and Lexipanda automatically finds the perfect quality level to hit that size. No guesswork needed — it runs up to 14 iterations to get as close as possible.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Does Lexipanda upload my images to a server?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a"><strong>Never.</strong> Lexipanda runs entirely in your browser using the Canvas API. Your images are processed locally on your device and are never sent to any server. This makes it completely private — ideal for confidential photos, personal documents, business images or any file you don't want leaving your device.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I convert JPG to WebP for free?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Drop your JPG image into Lexipanda, then click <strong>WebP</strong> in the Output Format selector. Hit Download — your image is saved as a WebP file. WebP typically saves 25–35% in file size compared to JPEG at the same visual quality, making it ideal for websites and web apps.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I crop an image to a specific ratio like 16:9 or 1:1?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Click <strong>Enter Crop Mode</strong> in the controls panel. The crop toolbar appears with ratio presets — choose <strong>1:1</strong> for square (Instagram), <strong>16:9</strong> for widescreen (YouTube thumbnails), <strong>4:3</strong> for standard, or <strong>Free</strong> for any custom shape. Drag to position your crop, then click <em>Apply</em>.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I resize an image without losing quality?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">In the <strong>Resize</strong> panel, enter your target width or height in pixels — the aspect ratio lock keeps proportions correct automatically. For quality, keep the compression quality slider above 80 and use <strong>WebP</strong> format which preserves more detail at smaller file sizes than JPEG.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What image formats does Lexipanda support?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">You can <strong>open</strong> JPEG, PNG, WebP, GIF and BMP files. You can <strong>export</strong> as JPEG, WebP or PNG. WebP is recommended for web use, JPEG for photos, and PNG for images that need a transparent background or pixel-perfect quality.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is Lexipanda completely free?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Yes — Lexipanda is <strong>free to use with 5 conversions per day</strong>, no account or sign up required. Your daily limit resets at midnight. Pro plan with unlimited conversions is coming soon — <a onclick="document.getElementById('paywallModal').classList.add('on')">join the waitlist</a> to get early access and a launch discount.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Does Lexipanda work on mobile?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Yes — Lexipanda works on any modern mobile browser including Chrome and Safari on iOS and Android. For the best experience with the crop tool and detailed adjustments, a desktop or tablet screen is recommended.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How is Lexipanda different from TinyPNG or Squoosh?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">The key difference is <strong>privacy and control</strong>. TinyPNG uploads your images to their servers to compress them. Squoosh is also browser-based but has a more technical interface. Lexipanda combines full browser-side privacy with a clean, simple interface, a target file size feature, interactive crop, filters and adjustments — all in one tool with no account needed.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I compress an image to an exact file size?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Yes — this is one of Lexipanda's most unique features. Type your target size in the <strong>Target Size</strong> field (in KB or MB) and click <em>Compress to Target</em>. Lexipanda uses a binary search algorithm running up to 14 iterations to find the quality level that gets your image as close as possible to that exact size. Note: PNG format is lossless and cannot be compressed to a specific size — use JPEG or WebP for this feature.</div>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer -->
@@ -1683,10 +1812,18 @@ function toast(msg) {
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
 },{threshold:.1});
-document.querySelectorAll('.feat-card,.how-step').forEach((el,i)=>{
+document.querySelectorAll('.feat-card,.how-step,.faq-item').forEach((el,i)=>{
   el.style.transitionDelay=`${i*0.07}s`;
   io.observe(el);
 });
+
+// ── FAQ ───────────────────────────────────────────────────────────────────────
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 updateUsageUI();
